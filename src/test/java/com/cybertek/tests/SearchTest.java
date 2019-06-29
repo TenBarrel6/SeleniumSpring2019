@@ -1,13 +1,10 @@
 package com.cybertek.tests;
 
-import com.cybertek.utilities.StringUtility;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-
-import java.awt.image.Kernel;
 
 public class SearchTest {
     public static void main(String[] args) throws InterruptedException{
@@ -16,7 +13,7 @@ public class SearchTest {
         wikiSearch();
     }
 
-    public static void ebaySearch()throws InterruptedException{
+    private static void ebaySearch()throws InterruptedException{
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.ebay.com/");
@@ -29,7 +26,7 @@ public class SearchTest {
         driver.quit();
     }
 
-    public static void amazonSearch()throws InterruptedException{
+    private static void amazonSearch()throws InterruptedException{
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.amazon.com/");
@@ -42,7 +39,7 @@ public class SearchTest {
         driver.quit();
     }
 
-    public static void wikiSearch()throws InterruptedException{
+    private static void wikiSearch()throws InterruptedException{
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.wikipedia.org/");
