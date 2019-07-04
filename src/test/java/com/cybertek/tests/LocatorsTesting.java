@@ -11,9 +11,9 @@ import java.util.*;
 
 public class LocatorsTesting {
     public static void main(String[] args) throws InterruptedException{
-        googleResultsTitle();
-        etsySearchTest();
-        vyTrackTitleTest();
+//        googleResultsTitle();
+//        etsySearchTest();
+//        vyTrackTitleTest();
         vyTrackShortCutTest();
 
     }
