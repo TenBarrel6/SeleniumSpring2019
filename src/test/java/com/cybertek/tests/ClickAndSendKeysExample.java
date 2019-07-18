@@ -1,6 +1,6 @@
 package com.cybertek.tests;
 
-import com.cybertek.utilities.StringUtility;
+import com.cybertek.utilities.VerificationUtils;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -17,6 +17,6 @@ public class ClickAndSendKeysExample {
         Thread.sleep(1000);
         driver.findElement(By.id("form_submit")).click();
         Thread.sleep(1000);
-        StringUtility.verifyEquals(driver.getCurrentUrl(), "http://practice.cybertekschool.com/email_sent");
+        VerificationUtils.verifyEquals(driver.getCurrentUrl(), "http://practice.cybertekschool.com/email_sent");
     }
 }

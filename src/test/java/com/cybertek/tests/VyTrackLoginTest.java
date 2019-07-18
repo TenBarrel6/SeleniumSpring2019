@@ -1,6 +1,6 @@
 package com.cybertek.tests;
 
-import com.cybertek.utilities.StringUtility;
+import com.cybertek.utilities.VerificationUtils;
 import com.github.javafaker.Faker;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
@@ -9,13 +9,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import java.util.List;
-
 public class VyTrackLoginTest {
     public static void main(String[] args) throws InterruptedException {
 //        loginVyTrack();
 //        logoutVyTrack();
-        InvalidLoginVyTrack();
+//        InvalidLoginVyTrack();
     }
 
     public static void logoutVyTrack() throws InterruptedException {
@@ -37,10 +35,10 @@ public class VyTrackLoginTest {
         driver.findElement(By.xpath("//*[@class='last']//*[@class='no-hash']")).click();
         Thread.sleep(1000);
         System.out.println("URL check:");
-        StringUtility.verifyEquals(driver.getCurrentUrl(), expectedUrl);
+        VerificationUtils.verifyEquals(driver.getCurrentUrl(), expectedUrl);
         System.out.println();
         System.out.println("Title check:");
-        StringUtility.verifyEquals(driver.getTitle(), expectedTitle);
+        VerificationUtils.verifyEquals(driver.getTitle(), expectedTitle);
         driver.quit();
 //        driver.findElement(By.id("user-menu")).click(); //dropdown-toggle, fa-caret-down
 //        Thread.sleep(1000);
@@ -58,9 +56,9 @@ public class VyTrackLoginTest {
 //        catch(org.openqa.selenium.StaleElementReferenceException ex)
 //        {
 //            System.out.println("URL check:");
-//            StringUtility.verifyEquals(driver.getCurrentUrl(), expectedUrl);
+//            VerificationUtils.verifyEquals(driver.getCurrentUrl(), expectedUrl);
 //            System.out.println("Title check:");
-//            StringUtility.verifyEquals(driver.getTitle(), expectedTitle);
+//            VerificationUtils.verifyEquals(driver.getTitle(), expectedTitle);
 //        }
     }
 
@@ -79,9 +77,9 @@ public class VyTrackLoginTest {
         driver.findElement(By.id("_submit")).click();
         Thread.sleep(1000);
         System.out.println("URL check:");
-        StringUtility.verifyEquals(driver.getCurrentUrl(), expectedUrl);
+        VerificationUtils.verifyEquals(driver.getCurrentUrl(), expectedUrl);
         System.out.println("Title check:");
-        StringUtility.verifyEquals(driver.getTitle(), expectedTitle);
+        VerificationUtils.verifyEquals(driver.getTitle(), expectedTitle);
         driver.quit();
     }
 
@@ -100,10 +98,10 @@ public class VyTrackLoginTest {
         driver.findElement(By.id("_submit")).click();
         Thread.sleep(1000);
         System.out.println("URL check:");
-        StringUtility.verifyEquals(driver.getCurrentUrl(), expectedUrl);
+        VerificationUtils.verifyEquals(driver.getCurrentUrl(), expectedUrl);
         System.out.println("Alert message check:");
         WebElement errorMessage = driver.findElement(By.xpath("//*[@class='alert alert-error']"));
-        StringUtility.verifyEquals(errorMessage.getText(), expectedText);
+        VerificationUtils.verifyEquals(errorMessage.getText(), expectedText);
         driver.quit();
     }
 }

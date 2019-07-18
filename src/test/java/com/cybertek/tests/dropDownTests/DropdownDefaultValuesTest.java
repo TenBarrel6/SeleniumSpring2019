@@ -1,4 +1,4 @@
-package com.cybertek.tests;
+package com.cybertek.tests.dropDownTests;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;

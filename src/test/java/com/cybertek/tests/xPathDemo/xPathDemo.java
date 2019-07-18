@@ -1,4 +1,4 @@
-package com.cybertek.tests;
+package com.cybertek.tests.xPathDemo;
 
 import com.github.javafaker.Faker;
 import io.github.bonigarcia.wdm.WebDriverManager;

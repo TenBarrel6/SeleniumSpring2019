@@ -1,8 +1,11 @@
 package com.cybertek.utilities;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class StringUtility {
+public class VerificationUtils {
     public static void verifyEquals(String actual, String expected){
         System.out.println(actual.equals(expected)?"PASS":"FAIL"+"\nactual: "+actual+"\nexpected: "+expected);
     }
@@ -37,4 +40,14 @@ public class StringUtility {
             }
         }
     }
-}
+
+    public static boolean isElementDisplayed (WebDriver driver, By by) {
+        try {
+            driver.findElement(by).isDisplayed();
+        } catch (NoSuchElementException e) {
+            return false;
+        }
+
+        return true;
+
+    }}

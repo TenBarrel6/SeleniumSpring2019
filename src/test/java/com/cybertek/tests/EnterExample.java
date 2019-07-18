@@ -1,6 +1,6 @@
 package com.cybertek.tests;
 
-import com.cybertek.utilities.StringUtility;
+import com.cybertek.utilities.VerificationUtils;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -19,6 +19,6 @@ public class EnterExample {
         //enters text there and hits ENTER button
         driver.findElement(By.name("email")).sendKeys("asdf@gmail.com"+ Keys.ENTER);
         Thread.sleep(1000);
-        StringUtility.verifyEquals(driver.getCurrentUrl(), "http://practice.cybertekschool.com/email_sent");
+        VerificationUtils.verifyEquals(driver.getCurrentUrl(), "http://practice.cybertekschool.com/email_sent");
     }
 }

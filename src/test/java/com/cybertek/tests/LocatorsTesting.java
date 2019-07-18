@@ -1,6 +1,6 @@
 package com.cybertek.tests;
 
-import com.cybertek.utilities.StringUtility;
+import com.cybertek.utilities.VerificationUtils;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -35,7 +35,7 @@ public class LocatorsTesting {
             driver.findElement(By.xpath("//*[@class='rc']//*[@class='r']")).click();
             Thread.sleep(1500);
             String actual = driver.getCurrentUrl();
-            StringUtility.verifyEquals(actual,expected);
+            VerificationUtils.verifyEquals(actual,expected);
             Thread.sleep(1500);
             driver.navigate().to("https://google.com");
             Thread.sleep(1500);
@@ -57,13 +57,13 @@ public class LocatorsTesting {
         Thread.sleep(1500);
         String actual = driver.findElement(By.xpath("//span[@class=' text-smaller']")).getText();
         System.out.println("Number of results is bigger then previous:");
-        System.out.println(StringUtility.resultsNumber(actual)>StringUtility.resultsNumber(expected)?"YES":"NO");
+        System.out.println(VerificationUtils.resultsNumber(actual)> VerificationUtils.resultsNumber(expected)?"YES":"NO");
         Thread.sleep(1500);
         driver.navigate().back();
         Thread.sleep(1500);
         actual = driver.findElement(By.id("global-enhancements-search-query")).getAttribute("value");
         System.out.println("Search box content test:");
-        StringUtility.verifyEquals(actual, "wooden spoon");
+        VerificationUtils.verifyEquals(actual, "wooden spoon");
         driver.navigate().back();
         actual = driver.findElement(By.id("global-enhancements-search-query")).getAttribute("value");
         System.out.println("Search box on a homepage is blank:");
@@ -149,7 +149,7 @@ public class LocatorsTesting {
         String actual = driver.findElement(By.xpath("//div[@class='alert alert-error fade in top-messages ']" +
                 "//div[@class='message']")).getText();
         System.out.println("Error message is displayed and equals:");
-        StringUtility.verifyEquals(actual, expected);
+        VerificationUtils.verifyEquals(actual, expected);
         Thread.sleep(1500);
         //Verify that user still on the Opportunities page
         System.out.println("Opportunities page is still open:");

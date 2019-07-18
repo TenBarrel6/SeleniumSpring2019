@@ -1,4 +1,4 @@
-package com.cybertek.tests;
+package com.cybertek.tests.verificationUtils;
 
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
